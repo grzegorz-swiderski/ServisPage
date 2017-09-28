@@ -1,0 +1,659 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin')
+
+$main-background-color: #313234 
+$main-font-color: #fff
+$main-akcent-color: #3CA4C7
+$color-icon: #fff
+$nav-hover-color: #B8BDBF
+
+@mixin container
+  max-width: 1200px
+  width: 100%
+  margin: 0 auto	
+
+@mixin block-for-mic-and-footer
+  text-align: center
+  padding: 0 5% 
+  color: white
+
+@mixin background-foto
+  background-size: cover
+  background-position: center
+  position: relative
+
+@mixin clearfix
+  content: " "
+  display: table
+  clear: both
+	
+@mixin icons
+  border-radius: 10%
+  padding: 10px
+
+* 	
+  box-sizing: border-box
+
+body
+  margin: 0 auto
+  font-family: 'Cabin', sans-serif
+  color: #313332
+	
+section
+  padding: 5% 0
+	
+.button-menu
+  border-radius: 50%
+  background: rgba(58,166,90, 0.4)
+  color: $color-icon
+  position: fixed
+  z-index: 1
+  left: 95%
+  top: 85%
+  cursor: pointer
+  transition: linear 0.2s
+  &:hover
+    background: rgba(58,166,90, 1)
+    animation: jump 0.5s 3
+  i
+    font-size: 450%
+    padding: 4px
+		
+
+@keyframes jump
+  0%
+    transform: translate(0,0px)
+  50%
+    transform: translate(0,-30px)
+  100%
+    transform: translate(0,0px)
+	
+header
+  background-color: $main-background-color
+  height: 50px
+  background-color: rgba (0.0.0 0.5)
+	
+.row:before, .row:after
+  @include clearfix
+	
+.row
+  margin-right: 0
+  margin-left: 0
+
+
+.container
+  @include container
+	
+nav
+  img
+    width: 10%
+    height: 55px
+  ul
+    padding: 0
+    list-style-type: none
+    float: right
+    li
+      display: inline-block
+      a
+        text-decoration: none
+        padding: 0 20px
+        line-height: 50px
+        text-transform: uppercase
+        color: $main-font-color
+        &:hover
+          cursor: pointer
+          background-color: $nav-hover-color
+          text-decoration: none
+          color: $main-font-color
+        &:focus
+          text-decoration: none
+          color: $main-font-color
+  img
+    padding: 10px 0	
+		
+.hamburger
+  display: none
+	
+.ham
+  display: inline-block
+
+.hero
+  background-image: url("../image/8.jpg")	
+  width: 100%
+  height: 100vh
+  @include background-foto
+  .slogan
+    max-width: 800px
+    background-color: rgba(0, 0, 0, 0.4)
+    position: absolute
+    right: 0%
+    top: 50%
+    color: $main-font-color
+    text-align: center
+    padding: 10px
+    h1
+      font-size: 200%
+
+
+[class*="col-"]
+  min-height: 1px
+  float: left
+  text-align: center
+
+
+.col-1
+  width: 8.33%
+
+.col-2
+  width: 16.66%
+
+.col-3
+  width: 25%
+
+.col-4
+  width: 33.33%
+
+.col-5
+  width: 41.66%
+	
+.col-6
+  width: 50%
+	
+.col-7
+  width: 58.33%
+	
+.col-8
+  width: 66.66%
+	
+.col-9	
+  width: 75%
+	
+.col-10
+  width: 83.33%
+	
+.col-11
+  width: 91.66%
+	
+.col-12	
+  width: 100%
+
+.col-offset-0
+  margin-left: 0%
+	
+.col-offset-1
+  margin-left: 8.33%
+	
+.col-offset-2
+  margin-left: 16.66%
+	
+.col-offset-3
+  margin-left: 25%
+	
+.col-offset-4	
+  margin-left: 33.33%
+
+.col-offset-5
+  margin-left: 41.66%
+	
+.col-offset-6
+  margin-left: 50%
+	
+.col-offset-7
+  margin-left: 58.33%
+	
+.col-offset-8
+  margin-left: 66.66%
+	
+.col-offset-9
+  margin-left: 75%
+	
+.col-offset-10
+  margin-left: 83.33%
+	
+.col-offset-11	
+  margin-left: 91.66%
+
+.icons 
+  i
+    @include icons
+    font-size: 100px
+    color: $color-icon
+    background: #313332
+  p
+    text-align: justify
+    padding: 0 3%
+
+.icons 
+  .blue-icon
+    &:hover 
+      color: #3CA4C7
+      cursor: pointer
+
+.icons 
+  .blue-icon
+    &:hover 
+      i 
+        background-color: $main-akcent-color
+        transition: linear 0.2s
+
+h2
+  font-size: 1.2em
+  text-transform: uppercase
+  font-weight: bold
+
+p
+  font-size: 15px
+  color: #505D61
+	
+#future_work
+  padding-top: 0
+  p
+    text-align: justify	
+
+.image
+  max-height: 250px
+  position: relative
+  width: 100%
+  img
+    width: 100%
+    height: 250px
+
+.layer
+  opacity: 0
+  position: absolute	
+  height: 100%
+  width: 100%
+  i, p
+    background: white
+    position: relative
+    top: 50%
+    margin: 0 5%
+  i
+    @include icons
+
+.image
+  &:hover 
+    .layer
+      opacity: 1
+      cursor: pointer
+      background: rgba(0,0,0, 0.5)
+      transition-duration: 0.5s
+      left: 0
+      right: 0
+      margin: auto
+
+.team
+  .image
+    max-height: 200px
+    left: 0
+    right: 0
+    margin: auto
+    img,.layer
+      border-radius: 50%
+      width: 200px
+      height: 200px
+      p
+        background: none
+        color: white
+        font-size: 90%
+        font-weight: bold
+
+
+.mic
+  background: $main-background-color
+  .list
+    position: relative
+  img
+    height: 100%
+    width: 100%
+  h2, p
+    @include block-for-mic-and-footer
+  p
+    text-align: justify
+  .carousel-indicators
+    position: absolute
+    top: 100%
+	
+.numbers
+  line-height: 0
+  width: 100%
+  h1
+    font-size: 4em
+  p
+    font-size: 0.8em
+
+.blue
+  color: $main-akcent-color
+
+
+#contact
+  background: $main-background-color
+  display: block
+  h2
+    @include block-for-mic-and-footer
+    text-align: left
+    &:after
+      content: ""
+      width: 100px
+      height: 2px
+      background: $main-font-color
+      display: inline-block
+      overflow: hidden
+      position: absolute
+      left: 150px
+      right: 0
+      top: 30px
+      margin: auto 10px
+  p
+    @include block-for-mic-and-footer
+    text-align: left
+  [class*="col-"]
+    position: relative
+	
+.social_icons i
+  background: $main-akcent-color
+  color: $color-icon
+  float: left
+  display: inline-block
+  margin: 0 2%
+  border-radius: 0
+  padding: 2%
+  font-size: 20px
+  transition-duration: 0.5s
+  &:hover
+    background: $color-icon	
+    color: $main-akcent-color
+    cursor: pointer
+
+
+.copy
+  text-align: center
+  background: #252726
+  margin: 0 auto
+  width: 100%
+  p
+    color: $main-font-color
+    padding-top: 1%
+    margin: 0
+
+
+@media (max-width: 767px)
+	
+  * 
+    box-sizing: border-box
+	
+  .container 
+    @include container
+	
+  .row:before, 
+  .row:after 
+    @include clearfix
+		
+  .button-menu
+    left: 82.5%
+    top: 80%
+	  
+  [class*="col-"] 
+    width: 100%
+    float: left
+	
+	
+  /* For tablets: */
+ 
+  .col-s-1 
+    width: 8.33%
+
+  .col-s-2 
+    width: 16.66%
+	
+  .col-s-3 
+    width: 25%
+	
+  .col-s-4 
+    width: 33.33%
+	
+  .col-s-5 
+    width: 41.66%
+	
+  .col-s-6 
+    width: 50%
+	
+  .col-s-7 
+    width: 58.33%
+	
+  .col-s-8 
+    width: 66.66%
+	
+  .col-s-9 
+    width: 75%
+		
+  .col-s-10
+    width: 83.33%
+		
+  .col-s-11 
+    width: 91.66%
+		
+  .col-s-12 
+    width: 100%
+		
+  .hamburger
+    display: inline-block
+	
+  .ham
+    display: none
+	 
+  header
+    height: 100%
+    text-align: center   
+		
+  nav
+    img
+      width: 15%
+      height: 55px
+      &:hover
+        cursor: pointer
+    ul
+      text-align: center
+      float: none
+      width: 100%
+      display: none
+      li
+        display: block
+        &:hover
+          background-color: $nav-hover-color
+          cursor: pointer
+
+  .hero
+    width: 100%
+		
+	
+  .icons .blue-icon
+    &:focus
+      color: $main-akcent-color
+      cursor: pointer
+      i 
+        background-color: $main-akcent-color
+	
+  .image
+    img
+      width: 100%
+    .layer
+      overflow: hidden
+      opacity: 0
+      position: absolute	
+      height: 100%
+      width: 100%
+      i, p
+        background: white
+        position: relative
+        top: 50%
+        margin: 0 5%
+
+  .image
+    &:hover 
+      .layer
+        opacity: 1
+        cursor: pointer
+        background: rgba(0,0,0, 0.5)
+        transition-duration: 0.5s
+        left: 0
+        right: 0
+        margin: auto
+        overflow: hidden
+		
+  .team
+    .image
+      max-height: 200px
+      left: 0
+      right: 0
+      margin: auto
+    .layer
+        border-radius: 50%
+
+	
+  #contact 
+    h2
+      text-align: center
+      &:after
+        display: none
+    p
+      text-align: justify
+      #center_p
+        text-align: center
+	
+  .social_icons i
+    float: none	
+    
+@media (min-width: 567px) and (max-width: 767px) 
+    
+  .button-menu
+    left: 87.5%
+    top: 72.5%
+		
+@media (min-width: 768px) and (max-width: 1024px) 
+    
+  .button-menu
+    left: 90%
+    top: 90%
+
+  .col-sm-1 
+    width: 8.33%
+	    
+  .col-sm-2	
+    width: 16.66%
+		
+  .col-sm-3
+    width: 25%
+		
+  .col-sm-4 
+    width: 33.33%
+		
+  .col-sm-5 
+    width: 41.66%
+	    
+  .col-sm-6 
+    width: 50%
+	    
+  .col-sm-7 
+    width: 58.33%
+		
+  .col-sm-8 
+    width: 66.66%
+		
+  .col-sm-9 
+    width: 75%
+		
+  .col-sm-10 
+    width: 83.33%
+		
+  .col-sm-11 
+    width: 91.66%
+	
+  .col-sm-12 
+    width: 100%
+	
+  .hamburger
+    display: inline-block
+	
+  .ham
+    display: none
+	 
+  header
+    height: 100%
+    text-align: center   
+		
+  nav
+    img
+      width: 15%
+      height: 55px
+      &:hover
+        cursor: pointer
+    ul
+      float: none
+      width: 100%
+      display: none
+      li
+        display: block
+        &:hover
+          background-color: $nav-hover-color
+          cursor: pointer
+
+  .mic
+    img
+      display: none
+			
+	
+		
+	
+@media (min-width: 768px) and (max-width: 1199px) 
+  /* For desktop: */
+
+  .button-menu
+    left: 90%
+    top: 90%
+	
+  .col-m-1 
+    width: 8.33%
+	    
+  .col-m-2	
+    width: 16.66%
+		
+  .col-m-3
+    width: 25%
+		
+  .col-m-4 
+    width: 33.33%
+		
+  .col-m-5 
+    width: 41.66%
+	    
+  .col-m-6 
+    width: 50%
+	    
+  .col-m-7 
+    width: 58.33%
+		
+  .col-m-8 
+    width: 66.66%
+		
+  .col-m-9 
+    width: 75%
+		
+  .col-m-10 
+    width: 83.33%
+		
+  .col-m-11 
+    width: 91.66%
+	
+  .col-m-12 
+    width: 100%
+	    
+  #contact
+    h2
+      &:after
+        display: none
+	 
+
+
+
+
+
